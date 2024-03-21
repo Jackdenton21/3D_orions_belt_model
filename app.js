@@ -65,42 +65,7 @@ createLine(pi2Orionis.position, pi1Orionis.position);
 createLine(bellatrix.position, nuOrionis.position);
 createLine(saiph.position, xiOrionis.position);
 
-function showPopup(name, x, y) {
-    let infoDiv = document.getElementById('starInfo');
-    if (!infoDiv) {
-        infoDiv = document.createElement('div');
-        infoDiv.id = 'starInfo';
-        document.body.appendChild(infoDiv);
-    }
 
-    infoDiv.textContent = `${name}`;
-    infoDiv.style.display = 'block';
-    infoDiv.style.position = 'absolute';
-    infoDiv.style.left = `${x}px`;
-    infoDiv.style.top = `${y}px`;
-    infoDiv.style.backgroundColor = 'white';
-    infoDiv.style.padding = '10px';
-    infoDiv.style.borderRadius = '8px';
-    infoDiv.style.border = '1px solid #ddd';
-    infoDiv.style.zIndex = '1000';
-}
-
-function onMouseClick(event) {
-    event.preventDefault();
-
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(scene.children, true);
-
-    if (intersects.length > 0) {
-        const star = intersects[0].object;
-        showPopup(star.name, event.clientX, event.clientY);
-    }
-}
-
-window.addEventListener('click', onMouseClick);
 
 
 for (let i = 0; i < 1000; i++) {
@@ -118,5 +83,28 @@ function animate() {
     controls.update();
     renderer.render(scene, camera);
 }
+
+const topTextDiv = document.createElement('div');
+topTextDiv.textContent = 'Orion Constellation 3D Model'; // You can change the text to whatever you need
+topTextDiv.style.position = 'fixed';
+topTextDiv.style.top = '10px';
+topTextDiv.style.left = '0';
+topTextDiv.style.width = '100%';
+topTextDiv.style.textAlign = 'center';
+topTextDiv.style.color = 'white';
+topTextDiv.style.zIndex = '1000';
+document.body.appendChild(topTextDiv);
+
+const textDiv = document.createElement('div');
+textDiv.textContent = 'Made by Jack Denton for PHYS 183 The Milky Way Inside and Out';
+textDiv.style.position = 'fixed';
+textDiv.style.bottom = '10px';
+textDiv.style.width = '100%';
+textDiv.style.textAlign = 'center';
+textDiv.style.zIndex = '1000';
+textDiv.style.color = 'white';
+textDiv.style.marginBottom = '10px';
+
+document.body.appendChild(textDiv);
 
 animate();
