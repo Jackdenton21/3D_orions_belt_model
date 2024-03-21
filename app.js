@@ -93,6 +93,8 @@ topTextDiv.style.width = '100%';
 topTextDiv.style.textAlign = 'center';
 topTextDiv.style.color = 'white';
 topTextDiv.style.zIndex = '1000';
+topTextDiv.style.fontWeight = 'bold'; // Makes the text bold
+topTextDiv.style.fontSize = '20px'; // Increases the font size to 24px
 document.body.appendChild(topTextDiv);
 
 const textDiv = document.createElement('div');
@@ -104,6 +106,9 @@ textDiv.style.textAlign = 'center';
 textDiv.style.zIndex = '1000';
 textDiv.style.color = 'white';
 textDiv.style.marginBottom = '10px';
+textDiv.style.fontWeight = 'bold';
+textDiv.style.fontSize = '18px';
+
 
 document.body.appendChild(textDiv);
 
