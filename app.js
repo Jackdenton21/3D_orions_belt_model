@@ -49,7 +49,6 @@ const nuOrionis = createStar(0.157, 0xaabfff, { x: 2, y: 2, z: -1.5 }, 'nuOrioni
 const xiOrionis = createStar(0.158, 0x9db4ff, { x: 1, y: -5, z: 0 }, 'xiOrion');
 
 
-// Creating lines for Orion constellation
 createLine(betelgeuse.position, bellatrix.position);
 createLine(betelgeuse.position, alnitak.position);
 createLine(bellatrix.position, mintaka.position);
@@ -64,8 +63,6 @@ createLine(pi3Orionis.position, pi2Orionis.position);
 createLine(pi2Orionis.position, pi1Orionis.position);
 createLine(bellatrix.position, nuOrionis.position);
 createLine(saiph.position, xiOrionis.position);
-
-
 
 
 for (let i = 0; i < 1000; i++) {
@@ -85,7 +82,7 @@ function animate() {
 }
 
 const topTextDiv = document.createElement('div');
-topTextDiv.textContent = 'Orion Constellation 3D Model'; // You can change the text to whatever you need
+topTextDiv.textContent = 'Orion Constellation 3D Model'; 
 topTextDiv.style.position = 'fixed';
 topTextDiv.style.top = '10px';
 topTextDiv.style.left = '0';
@@ -93,8 +90,8 @@ topTextDiv.style.width = '100%';
 topTextDiv.style.textAlign = 'center';
 topTextDiv.style.color = 'white';
 topTextDiv.style.zIndex = '1000';
-topTextDiv.style.fontWeight = 'bold'; // Makes the text bold
-topTextDiv.style.fontSize = '1.5vw'; // Responsive font size based on viewport width
+topTextDiv.style.fontWeight = 'bold'; 
+topTextDiv.style.fontSize = '1.5vw'; 
 document.body.appendChild(topTextDiv);
 
 const textDiv = document.createElement('div');
